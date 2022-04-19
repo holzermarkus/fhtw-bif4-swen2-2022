@@ -1,6 +1,6 @@
 package at.fhtw.swen2.jfx;
 
-import at.fhtw.swen2.Swen2Application;
+import at.fhtw.swen2.SwenSpringBootApplication;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.stage.Stage;
@@ -8,13 +8,13 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ConfigurableApplicationContext;
 
-public class MyJavaFxApplication extends Application {
+public class DemoJfxApplication extends Application {
 
     private ConfigurableApplicationContext applicationContext;
 
     @Override
     public void init() {
-        applicationContext = new SpringApplicationBuilder(Swen2Application.class).run();
+        applicationContext = new SpringApplicationBuilder(SwenSpringBootApplication.class).run();
     }
 
     @Override

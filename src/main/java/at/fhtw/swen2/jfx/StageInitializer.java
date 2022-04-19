@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 import java.io.IOException;
 
 @Component
-public class StageInitializer implements ApplicationListener<MyJavaFxApplication.StageReadyEvent> {
+public class StageInitializer implements ApplicationListener<DemoJfxApplication.StageReadyEvent> {
     @Value("classpath:/MainWindow.fxml")
     private Resource appResource;
     private ApplicationContext applicationContext;
@@ -23,7 +23,7 @@ public class StageInitializer implements ApplicationListener<MyJavaFxApplication
     }
 
     @Override
-    public void onApplicationEvent(MyJavaFxApplication.StageReadyEvent event) {
+    public void onApplicationEvent(DemoJfxApplication.StageReadyEvent event) {
 
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(appResource.getURL());
