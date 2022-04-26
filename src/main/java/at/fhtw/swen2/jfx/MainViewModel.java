@@ -9,6 +9,7 @@ import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -19,7 +20,10 @@ import java.util.ResourceBundle;
  * By adding the @Component, Spring is able to detect the class and register it.
  */
 @Component
+@Slf4j
 public class MainViewModel implements Initializable {
+
+
     private final StringProperty _filterText = new SimpleStringProperty("");
     private final ObservableList<String> _filteredData = FXCollections.observableArrayList();
 
@@ -51,8 +55,10 @@ public class MainViewModel implements Initializable {
     }
 
     public void filter() {
+        System.out.println("filter: " + this._filterText);
+        log.info("filter: " + this._filterText);
         var data = _comHandler.getContent();
-        var interpretedData = _interpreter.Interpret(data);
+        var interpretedData = _interpreter.interpret(data);
         var filteredData = _filter.Filter(interpretedData, _filterText.get());
         _filteredData.clear();
         for (String filteredDataItem : filteredData) {

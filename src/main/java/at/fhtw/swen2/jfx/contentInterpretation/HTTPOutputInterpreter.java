@@ -17,7 +17,7 @@ public class HTTPOutputInterpreter implements ContentInterpreter {
     private List<String> cachedOutput = null;
 
     @Override
-    public List<String> Interpret(String content) {
+    public List<String> interpret(String content) {
 
         // maybe this should check whether the content has changed before returning cached results
         if (cachedOutput != null) {
