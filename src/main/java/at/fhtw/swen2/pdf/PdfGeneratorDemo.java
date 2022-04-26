@@ -10,7 +10,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
 
-public class DemoParser {
+public class PdfGeneratorDemo {
 
     private String parseThymeleafTemplate() {
         ClassLoaderTemplateResolver templateResolver = new ClassLoaderTemplateResolver();
